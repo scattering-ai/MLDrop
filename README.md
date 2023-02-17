@@ -24,11 +24,11 @@ import mldrop_client
 # Import PyTorch
 import torch
 
-# Init mldrop
+# Init mldrop (using your account token)
 MLDROP_ACCESS_TOKEN = "USE_YOUR_ACCOUNT_TOKEN"
 mldrop = mldrop_client.init(MLDROP_ACCESS_TOKEN)
 
-# Load your PyTorch model (dummy model that adds two numbers)
+# Your PyTorch model (dummy model that adds two numbers)
 class MyPytorchModel(torch.nn.Module):
     def __init__(self):
         super().__init__()
@@ -36,7 +36,7 @@ class MyPytorchModel(torch.nn.Module):
     def forward(self, a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
         return a + b
 
-# Create instance of PyTorch model (place your model here)
+# Load your PyTorch model (place your model here)
 model: torch.nn.Module = MyPytorchModel()
 
 # Define model metadata: name + inputs + outputs
@@ -59,11 +59,13 @@ model_id = mldrop.deploy_pytorch_model(model_metadata, model)
 2) Invoke model through Python API:
 ```python
 # Use model_id to invoke model
+# Invocation samples are defined as key-value dictionaries where keys should match the model expected inputs
 samples = [
     {"a": 3, "b": 5},
     {"a": 7, "b": 2},
 ]
 output = mldrop.invoke_model(model_id, samples)
+# You get one output for each invocation sample, in the same order
 print(output)
 ```
 
