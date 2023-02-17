@@ -15,7 +15,7 @@ pip install --upgrade mldrop_client
 2) Create an account for FREE [here](https://api.scattering.ai/signup?utm_source=landing) and get the access token from your email.
 
 ## Usage
-1) Deploy model (see full example [here](examples/hello_world.py)):
+1) Load your PyTorch model and deploy it to MLDrop (see full example [here](examples/hello_world.py)):
 
 ```python
 # Import MLDrop
