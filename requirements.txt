@@ -1,0 +1,9 @@
+numpy
+
+# pytorch dependencies
+torch
+torchvision
+torchtext
+
+# mldrop
+mldrop_client
