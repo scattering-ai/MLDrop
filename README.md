@@ -1,5 +1,5 @@
 # MLDrop client
-Easily deploy PyTorch models for serving with one line.
+Easily deploy PyTorch models for serving with a few lines.
 
 [MLDrop](https://scattering-ai.webflow.io/) is a platform that allows you to deploy PyTorch models for serving.
 
