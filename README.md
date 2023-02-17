@@ -85,6 +85,10 @@ curl -X POST https://api.scattering.ai/api/v1/model/invoke -d '{
 }'
 ```
 
+## Examples:
+ - [Hello world - deploy a simple PyTorch](examples/hello_world.py)
+ - [ResNet - deploy a pre-trained ResNet-18 to perform image classificaton](examples/resnet.py)
+
 
 
 
