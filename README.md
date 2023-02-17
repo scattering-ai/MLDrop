@@ -3,7 +3,7 @@ Easily deploy PyTorch models for serving with a few lines.
 
 [MLDrop](https://scattering-ai.webflow.io/) is a platform that allows you to deploy PyTorch models for serving.
 
-You can use it for FREE. [Create an account](https://api.scattering.ai/signup?utm_source=landing).
+You can create a new account for FREE. [Create an account](https://api.scattering.ai/signup?utm_source=github).
 
 ## Installation
 1) Install mldrop_client module:
