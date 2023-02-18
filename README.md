@@ -1,9 +1,9 @@
 # MLDrop client
 Easily deploy PyTorch models for serving with a few lines.
 
-[MLDrop](https://scattering-ai.webflow.io/) is a platform that allows you to deploy PyTorch models for serving.
+[MLDrop](https://www.scattering.ai/) is a platform that allows you to deploy PyTorch models for serving.
 
-You can create a new account for FREE. [Create an account](https://api.scattering.ai/signup?utm_source=github).
+You can create a new account for FREE. [Create an account](https://www.scattering.ai/signup?utm_source=github).
 
 ## Installation
 1) Install mldrop_client module:
@@ -12,7 +12,7 @@ You can create a new account for FREE. [Create an account](https://api.scatterin
 pip install --upgrade mldrop_client
 ```
 
-2) Create an account for FREE [here](https://api.scattering.ai/signup?utm_source=landing) and get the access token from your email.
+2) Create an account for FREE [here](https://www.scattering.ai/signup?utm_source=github) and get the access token from your email.
 
 ## Usage
 1) Load your PyTorch model and deploy it to MLDrop (see full example [here](examples/hello_world.py)):
