@@ -20,7 +20,7 @@ def main():
     """
     Deploy a PyTorch model to MLDrop and then invoke it
     """
-    # Init MLDrop using your access token. Create a FREE account in: https://scattering-ai.webflow.io/
+    # Init MLDrop using your access token. Create an account in: https://www.scattering.ai/
     MLDROP_ACCESS_TOKEN = "USE_YOUR_ACCOUNT_TOKEN"
     mldrop = mldrop_client.init(MLDROP_ACCESS_TOKEN)
 

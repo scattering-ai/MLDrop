@@ -55,7 +55,7 @@ class RobertaEncoderWrapperMode(torch.nn.Module):
 
 def main():
     # Init mldrop
-    # Create a FREE account in: https://scattering-ai.webflow.io/
+    # Create an account in: https://www.scattering.ai/
     # Then use the access token you'll get in your email
     MLDROP_ACCESS_TOKEN = "USE_YOUR_ACCOUNT_TOKEN"
     mldrop = mldrop_client.init(MLDROP_ACCESS_TOKEN)
