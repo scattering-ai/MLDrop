@@ -1,9 +1,21 @@
 # MLDrop client
 Easily deploy PyTorch models for serving with a few lines.
 
-[MLDrop](https://www.scattering.ai/) is a platform that allows you to deploy PyTorch models for serving.
+[MLDrop](https://www.scattering.ai/) is a platform by [Scattering AI](https://www.scattering.ai/) that allows you to deploy PyTorch models for serving.
 
-You can create a new account for FREE. [Create an account](https://www.scattering.ai/signup?utm_source=github).
+MLDrop client is the python lib that allows to deploy models to MLDrop.
+
+## Features
+- MLDrop is a serving platform specifically designed for [TorchScript](https://pytorch.org/docs/stable/jit.html) models.
+- Easily deploy your PyTorch model with a few lines.
+- Focus on your model, not DevOps, MLDrop takes care of launching instances, scaling, packaging, monitoring, etc.
+- Your models can easily be invoked from anywhere using a simple REST API.
+- MLDrop focus is efficient model inference, it doesn't add any constrain to your training pipeline. 
+
+## How does MLDrop work
+- Your model is converted to [TorchScript](https://pytorch.org/docs/stable/jit.html) and deployed for serving behind the scenes.
+- The platform scales on demand as needed.
+- Serving is performed using our hand-tuned inference server specifically optimized for TorchScript.
 
 ## Installation
 1) Install mldrop_client module:
@@ -28,7 +40,7 @@ import torch
 MLDROP_ACCESS_TOKEN = "USE_YOUR_ACCOUNT_TOKEN"
 mldrop = mldrop_client.init(MLDROP_ACCESS_TOKEN)
 
-# Your PyTorch model (dummy model that adds two numbers)
+# Your PyTorch model (in this example a dummy model that adds two numbers)
 class MyPytorchModel(torch.nn.Module):
     def __init__(self):
         super().__init__()
@@ -39,7 +51,7 @@ class MyPytorchModel(torch.nn.Module):
 # Load your PyTorch model (place your model here)
 model: torch.nn.Module = MyPytorchModel()
 
-# Define model metadata: name + inputs + outputs
+# Define some basic metadata: name + inputs + outputs
 model_metadata = mldrop.create_model_metadata(
     model_name="my_hello_world_model", # Unique name for this model
     inputs=[
@@ -47,13 +59,13 @@ model_metadata = mldrop.create_model_metadata(
         mldrop.input_float("b"), # Second input
     ],
     outputs=[
-        mldrop.output_float("result"), # One single output
+        mldrop.output_float("result"), # Mode output
     ],
 )
 
 # Deploy model to MLDrop and get model_id
 model_id = mldrop.deploy_pytorch_model(model_metadata, model)
-# Done! Your model is up and running in the cloud ready to be consumed
+# Done! Your model is up and running in the cloud ready to be invoked
 ```
 
 2) Invoke model through Python API:
@@ -65,6 +77,7 @@ samples = [
     {"a": 7, "b": 2},
 ]
 output = mldrop.invoke_model(model_id, samples)
+
 # You get one output for each invocation sample, in the same order
 print(output)
 ```
@@ -87,9 +100,8 @@ curl -X POST https://api.scattering.ai/api/v1/model/invoke -d '{
 
 ## Examples:
  - [Hello world - deploy a simple PyTorch](examples/hello_world.py)
- - [ResNet - deploy a pre-trained ResNet-18 to perform image classificaton](examples/resnet.py)
-
-
+ - [ResNet - Image classification using a pre-trained ResNet-18 model](examples/resnet.py)
+ - [Roberta - text to embedding using a pre-trained Roberta model](examples/roberta_text_encoder.py)
 
 
 

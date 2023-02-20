@@ -34,7 +34,7 @@ def main():
     # Define model metadata: name + inputs + outputs
     model_metadata = mldrop.create_model_metadata(
         model_name="my_test_model_sum", # Unique name for your model
-        description="My test model - Add two numbers", # Some decription
+        description="My test model - Add two numbers", # Some description
         inputs=[ # List of expected inputs
             mldrop.input_float("a"), # First input
             mldrop.input_float("b"), # Second input

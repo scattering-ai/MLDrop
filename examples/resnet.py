@@ -2,6 +2,11 @@
 Deploy a pre-trained ResNet-18 from torchvision to MLDrop.
 Perform image classification for the given image URLs.
 It also shows how to perform pre and post-processing inside the PyTorch model itself.
+
+Installation:
+pip install --upgrade mldrop_client
+pip install torch
+pip install torchvision
 """
 import typing
 import torch
