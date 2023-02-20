@@ -7,7 +7,7 @@ MLDrop client is the python lib that allows to deploy models to MLDrop.
 
 ## Features
 - MLDrop is a serving platform specifically designed for [TorchScript](https://pytorch.org/docs/stable/jit.html) models.
-- Easily deploy your PyTorch model with a few lines.
+- Easily deploy your [PyTorch](https://pytorch.org/) model with a few lines.
 - Focus on your model, not DevOps, MLDrop takes care of launching instances, scaling, packaging, monitoring, etc.
 - Your models can easily be invoked from anywhere using a simple REST API.
 - MLDrop focus is efficient model inference, it doesn't add any constrain to your training pipeline. 
@@ -24,7 +24,7 @@ MLDrop client is the python lib that allows to deploy models to MLDrop.
 pip install --upgrade mldrop_client
 ```
 
-2) Create an account for FREE [here](https://www.scattering.ai/signup?utm_source=github) and get the access token from your email.
+2) [Create an account here](https://www.scattering.ai/signup?utm_source=github) and get the access token from your email.
 
 ## Usage
 1) Load your PyTorch model and deploy it to MLDrop (see full example [here](examples/hello_world.py)):
