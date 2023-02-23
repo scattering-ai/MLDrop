@@ -15,7 +15,7 @@ MLDrop client is the python lib that allows to deploy models to MLDrop.
 ## How does MLDrop work
 - Your model is converted to [TorchScript](https://pytorch.org/docs/stable/jit.html) and deployed for serving behind the scenes.
 - The platform scales on demand as needed.
-- Serving is performed using our hand-tuned inference server specifically optimized for TorchScript.
+- Serving is performed using our own inference server optimized for TorchScript.
 
 ## Installation
 1) Install mldrop_client module:
